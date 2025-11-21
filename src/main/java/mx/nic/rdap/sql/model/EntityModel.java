@@ -316,6 +316,8 @@ public class EntityModel {
 			List<Status> statusList = StatusModel.getByEntityId(entityId, connection);
 			entity.getStatus().addAll(statusList);
 
+			entity.getLinks().addAll(LinkModel.getByEntityId(entityId, connection));
+
 			List<PublicId> pidList = PublicIdModel.getByEntity(entityId, connection);
 			entity.getPublicIds().addAll(pidList);
 
